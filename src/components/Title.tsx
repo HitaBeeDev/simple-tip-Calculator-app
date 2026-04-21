@@ -1,8 +1,9 @@
 const Title = (): JSX.Element => {
   return (
-    <h1 className="text-center font-semibold text-[#070F2B] mb-10 text-lg tracking-widest leading-loose">
-      TipCalc
-    </h1>
+    <div>
+      <h1 className="text-2xl font-bold text-white tracking-wide">TipCalc</h1>
+      <p className="text-sm text-[#8faea6] mt-1">Split bills without the math.</p>
+    </div>
   );
 };
 

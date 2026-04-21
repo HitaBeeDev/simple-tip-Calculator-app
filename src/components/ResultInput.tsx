@@ -14,36 +14,35 @@ export default function ResultInput({
   perPerson,
 }: ResultInputProps): JSX.Element {
   return (
-    <div className="flex flex-col gap-5" aria-live="polite" aria-atomic="true">
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-col gap-1">
-          <p className="lg:text-sm text-xs font-medium text-[#070F2B]">
-            Tip Amount
-          </p>
-        </div>
-        <p className="lg:text-sm text-xs font-medium text-[#070F2B]">
-          {formatCurrency(tipAmount)}
-        </p>
-      </div>
+    <div aria-live="polite" aria-atomic="true">
+      <p className="text-xs font-semibold text-[#4f736b] uppercase tracking-widest mb-6">
+        Overview
+      </p>
 
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-col gap-1">
-          <p className="lg:text-sm text-xs font-medium text-[#070F2B]">
-            Per Person
-          </p>
-        </div>
-        <p className="lg:text-sm text-xs font-medium text-[#070F2B]">
+      <div className="mb-6">
+        <p className="text-xs font-medium text-[#4f736b] uppercase tracking-wider mb-1">
+          Per Person
+        </p>
+        <p className="text-4xl font-bold text-[#273d38]">
           {formatCurrency(perPerson)}
         </p>
       </div>
 
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-col gap-1">
-          <p className="lg:text-sm text-xs font-medium text-[#070F2B]">Total</p>
+      <div className="h-px bg-[#d1e1de] mb-6" />
+
+      <div className="flex flex-col gap-4">
+        <div className="flex justify-between items-center">
+          <p className="text-sm font-medium text-[#4f736b]">Tip Amount</p>
+          <p className="text-base font-semibold text-[#273d38]">
+            {formatCurrency(tipAmount)}
+          </p>
         </div>
-        <p className="lg:text-sm text-xs font-medium text-[#070F2B]">
-          {formatCurrency(total)}
-        </p>
+        <div className="flex justify-between items-center">
+          <p className="text-sm font-medium text-[#4f736b]">Total</p>
+          <p className="text-base font-semibold text-[#273d38]">
+            {formatCurrency(total)}
+          </p>
+        </div>
       </div>
     </div>
   );

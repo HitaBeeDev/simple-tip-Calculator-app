@@ -28,22 +28,22 @@ export default function PercentageInput({
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-2">
       <label
         htmlFor={customInputId}
-        className="lg:text-sm text-xs font-medium text-[#070F2B]"
+        className="text-xs font-medium text-[#b5cbc5] uppercase tracking-wider"
       >
         Select Tip %
       </label>
-      <div className="flex flex-row flex-wrap gap-3 mt-2">
+      <div className="flex flex-row flex-wrap gap-2">
         {predefinedPercentages.map((percentage) => (
           <button
             type="button"
             aria-label={`Select ${percentage}% tip`}
-            className={`lg:text-sm text-xs font-medium rounded-md border-2 w-12 h-6 lg:w-16 lg:h-8 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B1A55] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
+            className={`text-xs font-semibold rounded-lg w-10 h-8 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8faea6] focus-visible:ring-offset-1 focus-visible:ring-offset-[#273d38] ${
               customPercentage === "" && selectedPercentage === percentage
-                ? "bg-[#535C91] border-[#535C91] text-[#F0F3FF]"
-                : "text-[#1B1A55] border-[#535C91] hover:text-[#070F2B] hover:border-[#535C91] hover:bg-[#b7b5dc]"
+                ? "bg-[#8faea6] text-[#162521]"
+                : "bg-[#3a5650] text-[#b5cbc5] hover:bg-[#4f736b] hover:text-white"
             }`}
             key={percentage}
             onClick={() => handlePercentageClick(percentage)}
@@ -51,16 +51,17 @@ export default function PercentageInput({
             {percentage}%
           </button>
         ))}
+
         <input
           id={customInputId}
           type="number"
-          placeholder="Custom %"
+          placeholder="Custom"
           value={customPercentage}
           onChange={handleCustomPercentageChange}
           min="0"
           max="100"
           step="1"
-          className="lg:text-sm text-xs rounded-md border-2 border-[#535C91] bg-white/95 text-[#070F2B] w-28 h-8 text-center p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#535C91]"
+          className="text-xs rounded-lg bg-[#3a5650] text-white placeholder-[#8faea6] w-20 h-8 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8faea6]"
         />
       </div>
     </div>

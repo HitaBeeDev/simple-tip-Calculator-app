@@ -5,7 +5,6 @@ import PercentageInput from "./PercentageInput";
 import ResultInput from "./ResultInput";
 import ResetButton from "./ResetButton";
 import NumberOfPeopleInput from "./NumberOfPeopleInput";
-import backgroundImage from "../assets/b3.jpg";
 
 function TipCalculator(): JSX.Element {
   const [bill, setBill] = useState("");
@@ -17,7 +16,8 @@ function TipCalculator(): JSX.Element {
   const tipAmount = numericBill * (percentage / 100);
   const total = numericBill + tipAmount;
   const perPerson = total / safeNumberOfPeople;
-  const isDefaultState = bill === "" && percentage === 0 && numberOfPeople === 1;
+  const isDefaultState =
+    bill === "" && percentage === 0 && numberOfPeople === 1;
 
   const handleSelectPercentage = (value: number) => {
     setPercentage(value);
@@ -30,38 +30,29 @@ function TipCalculator(): JSX.Element {
   }
 
   return (
-    <div
-      className="flex justify-center items-center h-screen"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="lg:w-1/2 w-11/12 p-5 mx-auto rounded-xl shadow-xl bg-white/80 backdrop-blur-lg">
-        <Title />
+    <div className="flex justify-center items-center min-h-screen bg-[#4f736b]">
+      <div className="flex flex-col lg:flex-row w-full max-w-3xl lg:min-h-[520px] rounded-2xl shadow-2xl overflow-hidden mx-4 my-8">
+        <div className="lg:w-[22rem] bg-[#273d38] flex flex-col p-8 gap-6">
+          <Title />
+          <AmountInput bill={bill} onSetBill={setBill} />
 
-        <div className="lg:grid lg:grid-cols-2 lg:gap-10 gap-5 flex flex-col lg:-mt-5">
-          <div className="flex flex-col gap-5 lg:p-5 p-1">
-            <AmountInput bill={bill} onSetBill={setBill} />
-            <PercentageInput
-              selectedPercentage={percentage}
-              onSelect={handleSelectPercentage}
-            />
-            <NumberOfPeopleInput
-              numberOfPeople={numberOfPeople}
-              onSetNumberOfPeople={setNumberOfPeople}
-            />
-          </div>
+          <PercentageInput
+            selectedPercentage={percentage}
+            onSelect={handleSelectPercentage}
+          />
+          <NumberOfPeopleInput
+            numberOfPeople={numberOfPeople}
+            onSetNumberOfPeople={setNumberOfPeople}
+          />
+        </div>
 
-          <div className="bg-[#d7d5ef]/95 h-44 lg:h-full flex flex-col justify-between rounded-xl shadow-xl lg:p-10 p-6 backdrop-blur-lg">
-            <ResultInput
-              tipAmount={tipAmount}
-              total={total}
-              perPerson={perPerson}
-            />
-            <ResetButton onReset={handleReset} disabled={isDefaultState} />
-          </div>
+        <div className="flex-1 bg-[#e8f0ef] flex flex-col justify-between p-8">
+          <ResultInput
+            tipAmount={tipAmount}
+            total={total}
+            perPerson={perPerson}
+          />
+          <ResetButton onReset={handleReset} disabled={isDefaultState} />
         </div>
       </div>
     </div>

@@ -8,13 +8,13 @@ export default function ResetButton({
   disabled,
 }: ResetButtonProps): JSX.Element {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-end mt-8">
       <button
         type="button"
-        className={`lg:text-sm text-xs transition-all duration-300 w-32 h-8 rounded-lg text-center font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B1A55] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
+        className={`text-sm font-semibold px-6 h-9 rounded-lg transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4f736b] focus-visible:ring-offset-2 ${
           disabled
-            ? "bg-[#9290C3]/50 text-[#1B1A55]/50 cursor-not-allowed"
-            : "hover:text-[#F0F3FF] hover:bg-[#535C91] bg-[#9290C3] text-[#1B1A55]"
+            ? "bg-[#d1e1de] text-[#8faea6] cursor-not-allowed"
+            : "bg-[#8faea6] text-white hover:bg-[#4f736b]"
         }`}
         onClick={onReset}
         disabled={disabled}

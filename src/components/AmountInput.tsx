@@ -33,18 +33,18 @@ export default function AmountInput({
     <div className="flex flex-col gap-1">
       <label
         htmlFor={inputId}
-        className="lg:text-sm text-xs font-medium text-[#070F2B]"
+        className="text-xs font-medium text-[#b5cbc5] uppercase tracking-wider"
       >
         Bill
       </label>
       <div className="relative">
-        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm font-medium text-[#1B1A55]">
+        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-[#8faea6]">
           $
         </span>
         <input
           id={inputId}
-          className={`rounded-md h-8 w-full pl-7 pr-2 bg-white/95 text-[#070F2B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#535C91] ${
-            errorMessage ? "border border-red-700" : ""
+          className={`rounded-lg h-9 w-full pl-7 pr-3 bg-[#3a5650] text-white placeholder-[#4f736b] text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8faea6] ${
+            errorMessage ? "ring-1 ring-red-400" : ""
           }`}
           type="text"
           inputMode="decimal"
@@ -58,7 +58,7 @@ export default function AmountInput({
         />
       </div>
       {errorMessage ? (
-        <p id={errorId} className="text-xs text-red-900">
+        <p id={errorId} className="text-xs text-red-300">
           {errorMessage}
         </p>
       ) : null}
