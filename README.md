@@ -10,9 +10,9 @@ A tip calculator built with React and TypeScript.
 
 | Metric | Score |
 |---|---|
-| Lighthouse Performance | 99 |
-| Accessibility | 96 |
-| SEO | 100 |
+| Lighthouse Performance | 100 |
+| Accessibility | 98 |
+| SEO | 90 |
 
 ## Features
 
