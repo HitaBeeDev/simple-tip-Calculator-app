@@ -1,7 +1,7 @@
-type NumberOfPeopleInputProps = {
+interface NumberOfPeopleInputProps {
   numberOfPeople: number;
   onSetNumberOfPeople: (value: number) => void;
-};
+}
 
 export default function NumberOfPeopleInput({
   numberOfPeople,

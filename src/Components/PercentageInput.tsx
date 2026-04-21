@@ -2,9 +2,9 @@ import { useState } from "react";
 
 const predefinedPercentages = [5, 10, 15, 25, 50];
 
-type PercentageInputProps = {
+interface PercentageInputProps {
   onSelect: (value: number) => void;
-};
+}
 
 export default function PercentageInput({
   onSelect,

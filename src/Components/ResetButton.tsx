@@ -1,6 +1,6 @@
-type ResetButtonProps = {
+interface ResetButtonProps {
   onReset: () => void;
-};
+}
 
 export default function ResetButton({
   onReset,

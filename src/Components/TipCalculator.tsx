@@ -16,6 +16,7 @@ function TipCalculator(): JSX.Element {
   const tip = numericBill * (percentage / 100);
   const total = (numericBill + tip) * numberOfPeople;
   const perPerson = total / numberOfPeople;
+  const tipAmount = tip / numberOfPeople;
 
   const handleSelectPercentage = (value: number) => {
     setPercentage(value);
@@ -50,7 +51,11 @@ function TipCalculator(): JSX.Element {
           </div>
 
           <div className="bg-[#9290C3] h-44 lg:h-full bg-opacity-50 flex flex-col justify-between rounded-xl shadow-xl lg:p-10 p-6 backdrop-blur-lg">
-            <ResultInput total={total} perPerson={perPerson} />
+            <ResultInput
+              tipAmount={tipAmount}
+              total={total}
+              perPerson={perPerson}
+            />
             <ResetButton onReset={handleReset} />
           </div>
         </div>

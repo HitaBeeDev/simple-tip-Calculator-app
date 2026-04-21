@@ -1,7 +1,7 @@
-type AmountInputProps = {
+interface AmountInputProps {
   bill: string;
   onSetBill: (value: string) => void;
-};
+}
 
 export default function AmountInput({
   bill,
