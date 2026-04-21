@@ -13,7 +13,6 @@ A tip calculator built with React and TypeScript.
 | Lighthouse Performance | 99 |
 | Accessibility | 96 |
 | SEO | 100 |
-| axe violations | 0 |
 
 ## Features
 
