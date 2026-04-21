@@ -32,7 +32,7 @@ function TipCalculator(): JSX.Element {
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#4f736b]">
       <div className="flex flex-col lg:flex-row w-full max-w-3xl lg:min-h-[520px] rounded-2xl shadow-2xl overflow-hidden mx-4 my-8">
-        <div className="lg:w-[22rem] bg-[#273d38] flex flex-col p-8 gap-6">
+        <div className="lg:w-[22rem] bg-[#273d38] flex flex-col p-6 sm:p-8 gap-5 sm:gap-6">
           <Title />
           <AmountInput bill={bill} onSetBill={setBill} />
 
@@ -46,7 +46,7 @@ function TipCalculator(): JSX.Element {
           />
         </div>
 
-        <div className="flex-1 bg-[#e8f0ef] flex flex-col justify-between p-8">
+        <div className="flex-1 bg-[#e8f0ef] flex flex-col justify-between p-6 sm:p-8">
           <ResultInput
             tipAmount={tipAmount}
             total={total}

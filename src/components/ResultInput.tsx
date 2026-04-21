@@ -23,7 +23,7 @@ export default function ResultInput({
         <p className="text-xs font-medium text-[#4f736b] uppercase tracking-wider mb-1">
           Per Person
         </p>
-        <p className="text-4xl font-bold text-[#273d38]">
+        <p className="text-3xl sm:text-4xl font-bold text-[#273d38]">
           {formatCurrency(perPerson)}
         </p>
       </div>

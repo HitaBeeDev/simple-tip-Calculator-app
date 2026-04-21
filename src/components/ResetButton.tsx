@@ -8,10 +8,10 @@ export default function ResetButton({
   disabled,
 }: ResetButtonProps): JSX.Element {
   return (
-    <div className="flex justify-end mt-8">
+    <div className="flex justify-end mt-6 sm:mt-8">
       <button
         type="button"
-        className={`text-sm font-semibold px-6 h-9 rounded-lg transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4f736b] focus-visible:ring-offset-2 ${
+        className={`text-sm font-semibold px-6 h-10 sm:h-9 w-full sm:w-auto rounded-lg transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4f736b] focus-visible:ring-offset-2 ${
           disabled
             ? "bg-[#d1e1de] text-[#8faea6] cursor-not-allowed"
             : "bg-[#8faea6] text-white hover:bg-[#4f736b]"

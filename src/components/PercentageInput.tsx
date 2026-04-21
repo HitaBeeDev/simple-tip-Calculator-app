@@ -35,12 +35,12 @@ export default function PercentageInput({
       >
         Select Tip %
       </label>
-      <div className="flex flex-row flex-wrap gap-2">
+      <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
         {predefinedPercentages.map((percentage) => (
           <button
             type="button"
             aria-label={`Select ${percentage}% tip`}
-            className={`text-xs font-semibold rounded-lg w-10 h-8 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8faea6] focus-visible:ring-offset-1 focus-visible:ring-offset-[#273d38] ${
+            className={`text-xs font-semibold rounded-lg h-9 sm:h-8 w-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8faea6] focus-visible:ring-offset-1 focus-visible:ring-offset-[#273d38] ${
               customPercentage === "" && selectedPercentage === percentage
                 ? "bg-[#8faea6] text-[#162521]"
                 : "bg-[#3a5650] text-[#b5cbc5] hover:bg-[#4f736b] hover:text-white"
@@ -61,7 +61,7 @@ export default function PercentageInput({
           min="0"
           max="100"
           step="1"
-          className="text-xs rounded-lg bg-[#3a5650] text-white placeholder-[#8faea6] w-20 h-8 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8faea6]"
+          className="text-xs rounded-lg bg-[#3a5650] text-white placeholder-[#8faea6] w-full h-9 sm:h-8 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8faea6]"
         />
       </div>
     </div>

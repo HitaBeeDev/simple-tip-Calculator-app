@@ -23,7 +23,7 @@ export default function NumberOfPeopleInput({
         Number of People
       </label>
       <div
-        className={`flex items-center rounded-lg bg-[#3a5650] h-9 overflow-hidden ${
+        className={`flex items-center rounded-lg bg-[#3a5650] h-10 sm:h-9 overflow-hidden ${
           hasError ? "ring-1 ring-red-400" : ""
         }`}
       >
@@ -31,7 +31,7 @@ export default function NumberOfPeopleInput({
           type="button"
           aria-label="Decrease number of people"
           onClick={() => onSetNumberOfPeople(Math.max(1, numberOfPeople - 1))}
-          className="w-9 h-full flex items-center justify-center text-[#8faea6] hover:text-white hover:bg-[#4f736b] transition-colors text-lg font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#8faea6]"
+          className="w-10 sm:w-9 h-full flex items-center justify-center text-[#8faea6] hover:text-white hover:bg-[#4f736b] transition-colors text-lg font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#8faea6]"
         >
           −
         </button>
@@ -49,7 +49,7 @@ export default function NumberOfPeopleInput({
           type="button"
           aria-label="Increase number of people"
           onClick={() => onSetNumberOfPeople(numberOfPeople + 1)}
-          className="w-9 h-full flex items-center justify-center text-[#8faea6] hover:text-white hover:bg-[#4f736b] transition-colors text-lg font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#8faea6]"
+          className="w-10 sm:w-9 h-full flex items-center justify-center text-[#8faea6] hover:text-white hover:bg-[#4f736b] transition-colors text-lg font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#8faea6]"
         >
           +
         </button>
