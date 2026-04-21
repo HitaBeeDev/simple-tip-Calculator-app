@@ -1,4 +1,12 @@
-export default function ResultInput({ total, perPerson }) {
+type ResultInputProps = {
+  total: number;
+  perPerson: number;
+};
+
+export default function ResultInput({
+  total,
+  perPerson,
+}: ResultInputProps): JSX.Element {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex flex-row justify-between">

@@ -1,8 +1,15 @@
+type NumberOfPeopleInputProps = {
+  numberOfPeople: number;
+  onSetNumberOfPeople: (value: number) => void;
+};
+
 export default function NumberOfPeopleInput({
   numberOfPeople,
   onSetNumberOfPeople,
-}) {
-  const handleNumberOfPeopleChange = (e) => {
+}: NumberOfPeopleInputProps): JSX.Element {
+  const handleNumberOfPeopleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const value = e.target.value;
     onSetNumberOfPeople(parseInt(value, 10) || 0);
   };

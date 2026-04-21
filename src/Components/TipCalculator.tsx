@@ -7,7 +7,7 @@ import ResetButton from "./ResetButton";
 import NumberOfPeopleInput from "./NumberOfPeopleInput";
 import backgroundImage from "../assets/b3.jpg";
 
-function TipCalculator() {
+function TipCalculator(): JSX.Element {
   const [bill, setBill] = useState("");
   const [percentage, setPercentage] = useState(0);
   const [numberOfPeople, setNumberOfPeople] = useState(1);
@@ -17,11 +17,11 @@ function TipCalculator() {
   const total = (numericBill + tip) * numberOfPeople;
   const perPerson = total / numberOfPeople;
 
-  const handleSelectPercentage = (value) => {
+  const handleSelectPercentage = (value: number) => {
     setPercentage(value);
   };
 
-  function handleReset() {
+  function handleReset(): void {
     setBill("");
     setPercentage(0);
     setNumberOfPeople(1);
