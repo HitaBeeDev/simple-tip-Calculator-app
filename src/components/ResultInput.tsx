@@ -4,43 +4,45 @@ interface ResultInputProps {
   perPerson: number;
 }
 
+function formatCurrency(value: number): string {
+  return Number.isFinite(value) ? `$${value.toFixed(2)}` : "$0.00";
+}
+
 export default function ResultInput({
   tipAmount,
   total,
   perPerson,
 }: ResultInputProps): JSX.Element {
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5" aria-live="polite" aria-atomic="true">
       <div className="flex flex-row justify-between">
         <div className="flex flex-col gap-1">
-          <p className="lg:text-sm text-xs font-medium text-[#1B1A55]">
+          <p className="lg:text-sm text-xs font-medium text-[#070F2B]">
             Tip Amount
           </p>
-          <p className="text-xs font-normal text-[#535C91]">/ Per Person</p>
         </div>
         <p className="lg:text-sm text-xs font-medium text-[#070F2B]">
-          ${tipAmount.toFixed(2)}
+          {formatCurrency(tipAmount)}
         </p>
       </div>
 
       <div className="flex flex-row justify-between">
         <div className="flex flex-col gap-1">
-          <p className="lg:text-sm text-xs font-medium text-[#1B1A55]">
-            Bill Amount
+          <p className="lg:text-sm text-xs font-medium text-[#070F2B]">
+            Per Person
           </p>
-          <p className="text-xs font-normal text-[#535C91]">/ Per Person</p>
         </div>
         <p className="lg:text-sm text-xs font-medium text-[#070F2B]">
-          ${perPerson.toFixed(2)}
+          {formatCurrency(perPerson)}
         </p>
       </div>
 
       <div className="flex flex-row justify-between">
         <div className="flex flex-col gap-1">
-          <p className="lg:text-sm text-xs font-medium text-[#1B1A55]">Total</p>
+          <p className="lg:text-sm text-xs font-medium text-[#070F2B]">Total</p>
         </div>
         <p className="lg:text-sm text-xs font-medium text-[#070F2B]">
-          ${total.toFixed(2)}
+          {formatCurrency(total)}
         </p>
       </div>
     </div>

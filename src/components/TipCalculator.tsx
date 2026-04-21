@@ -17,6 +17,7 @@ function TipCalculator(): JSX.Element {
   const tipAmount = numericBill * (percentage / 100);
   const total = numericBill + tipAmount;
   const perPerson = total / safeNumberOfPeople;
+  const isDefaultState = bill === "" && percentage === 0 && numberOfPeople === 1;
 
   const handleSelectPercentage = (value: number) => {
     setPercentage(value);
@@ -37,7 +38,7 @@ function TipCalculator(): JSX.Element {
         backgroundPosition: "center",
       }}
     >
-      <div className="lg:w-1/2 w-11/12 p-5 mx-auto rounded-xl shadow-xl bg-white/10 backdrop-blur-lg">
+      <div className="lg:w-1/2 w-11/12 p-5 mx-auto rounded-xl shadow-xl bg-white/80 backdrop-blur-lg">
         <Title />
 
         <div className="lg:grid lg:grid-cols-2 lg:gap-10 gap-5 flex flex-col lg:-mt-5">
@@ -53,13 +54,13 @@ function TipCalculator(): JSX.Element {
             />
           </div>
 
-          <div className="bg-[#9290C3] h-44 lg:h-full bg-opacity-50 flex flex-col justify-between rounded-xl shadow-xl lg:p-10 p-6 backdrop-blur-lg">
+          <div className="bg-[#d7d5ef]/95 h-44 lg:h-full flex flex-col justify-between rounded-xl shadow-xl lg:p-10 p-6 backdrop-blur-lg">
             <ResultInput
               tipAmount={tipAmount}
               total={total}
               perPerson={perPerson}
             />
-            <ResetButton onReset={handleReset} />
+            <ResetButton onReset={handleReset} disabled={isDefaultState} />
           </div>
         </div>
       </div>
