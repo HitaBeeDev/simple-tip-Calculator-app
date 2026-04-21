@@ -1,4 +1,4 @@
-import TipCalculator from "./Components/TipCalculator";
+import TipCalculator from "./components/TipCalculator";
 import "./index.css";
 
 function App(): JSX.Element {
